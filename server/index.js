@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(cors());
 
 // define a hello world route
-app.get("/", verifyToken, (_, res) => {
+app.get("/", (_, res) => {
   res.status(200).json({ message: "Hello world\n" });
 });
 

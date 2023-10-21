@@ -63,3 +63,13 @@ export async function register(req, res) {
     res.status(500).json(error);
   }
 }
+
+export async function getAllUsers(_, res) {
+  try {
+    const users = await User.find();
+    res.status(200).json(users);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+}
